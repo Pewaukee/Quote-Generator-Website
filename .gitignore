@@ -40,3 +40,6 @@ __pycache__
 
 # python virtual environment
 /venv/
+
+# data for generating the messages
+/data/
