@@ -8,7 +8,7 @@ from messenger import *
 app = Flask(__name__)
 CORS(app) # allow localhost:3000 to call the api
 
-@app.route("http://localhost/api/python/generate", methods=['POST']) # post request
+@app.route("/api/python/generate", methods=['POST']) # post request
 def generate():
     prompt = request.json['prompt']
     response_text = openai.ChatCompletion.create(
