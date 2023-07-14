@@ -9,7 +9,7 @@ app = Flask(__name__)
 CORS(app) # allow localhost:3000 to call the api
 
 @app.route("/api/python/generate", methods=['POST']) # post request
-def generate():
+def generate(): # TODO: doesn't route correctly on production, inspect on website and look at console for more
     prompt = request.json['prompt']
     response_text = openai.ChatCompletion.create(
         model='gpt-3.5-turbo',

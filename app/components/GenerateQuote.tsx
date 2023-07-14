@@ -8,7 +8,7 @@ export default function GenerateQuote({ prompt }: { prompt: string }) {
   // based on production or development
   const baseUrl =
     process.env.NODE_ENV === 'production'
-      ? 'https://quote-generator-website-blue.vercel.app:8080'
+      ? ''
       : 'http://localhost:8080';
 
   const url = `${baseUrl}/api/python/generate`;
@@ -17,6 +17,7 @@ export default function GenerateQuote({ prompt }: { prompt: string }) {
 
   const [quote, setQuote] = useState('Generating Quote...'); // [state, function to update state]
   useEffect(() => {
+    // post request to python server
     axios
       .post(url, {
         prompt: prompt,
